@@ -30,7 +30,7 @@ def get_json(url, pages, headers):
                 hd['false'] += 1
         else:
             pass
-    # print '#############', params
+
     return resp
 
     # pprint.pprint(resp)
@@ -42,11 +42,10 @@ if __name__ == '__main__':
 
     print '========'
     while get_json(url, pages, headers)['more'] != False:
-        # print '+++++++', get_json(url, pages, headers)['more']
+        print '+++++++', get_json(url, pages, headers)['more']
         pages += 1
-        # print 'pages is now ', pages
+        print 'Pages is now ', pages
         get_json(url, pages, headers)
-    # get_json(url, pages, params, headers)
 
     print count_of_flags
     print hd
