@@ -40,12 +40,11 @@ def get_json(url, pages, headers):
 
 if __name__ == '__main__':
 
-    print '========'
     while get_json(url, pages, headers)['more'] != False:
-        print '+++++++', get_json(url, pages, headers)['more']
+        print '>>> Current page %s' %(pages), 'Response ["more"] is %s' %(get_json(url, pages, headers)['more'])
         pages += 1
-        print 'Pages is now ', pages
         get_json(url, pages, headers)
 
-    print count_of_flags
-    print hd
+    print 'Count of flags: ' + str(count_of_flags)
+    print 'Total objects have flags:hd set to false is ' + str(hd['false'])
+    print 'Total objects have flags:hd set to true is ' + str(hd['true'])
